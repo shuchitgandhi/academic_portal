@@ -46,7 +46,7 @@
 
         <!--Custom Styles for demo only-->
         <link rel="stylesheet" href="custom-style.css">
-
+        <script src="js/modernizr.custom.js"></script>
     </head>
     <body>
 
@@ -209,12 +209,20 @@
                             <div class="section-container">
                                 
                                 <h2 class="title">FAQ</h2>
-                                
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                                                   
-                                    </div>
-                                </div>
+                                <section>
+                                    <div class="tabs tabs-style-underline">
+                                        <nav>
+                                            <ul>
+                                                <li><a href="#section-underline-1"><span>B.Tech (ICT)</span></a></li>
+                                                <li><a href="#section-underline-2"><span>B.Tech (Honors in ICT with minor in CS)</span></a></li>
+                                            </ul>
+                                        </nav>
+                                        <div class="content-wrap">
+                                            <section id="section-underline-1"><p>1</p></section>
+                                            <section id="section-underline-2"><p>2</p></section>
+                                        </div><!-- /content -->
+                                    </div><!-- /tabs -->
+                                </section>
                             </div>
                         </div>
                     </div>
@@ -224,5 +232,15 @@
             
             </div>
         </div>
+        <script src="js/cbpFWTabs.js"></script>
+        <script>
+            (function() {
+
+                [].slice.call( document.querySelectorAll( '.tabs' ) ).forEach( function( el ) {
+                    new CBPFWTabs( el );
+                });
+
+            })();
+        </script>
     </body>
 </html>
