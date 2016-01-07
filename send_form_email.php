@@ -17,6 +17,7 @@ if(IsInjected($visitor_email))
     echo "Bad email value!";
     exit;
 }
+
 $name = $_POST['name'];
 $to = '201301441@daiict.ac.in';
 $contact = $_POST['email'];
@@ -32,7 +33,6 @@ $email_body = "Name: $name.\n".
 
 $headers = "From: " . strip_tags($contact) . "\r\n";
 $headers .= "Reply-To: ". strip_tags($contact) . "\r\n";
-// $headers .= "CC: kushan_joshi@daiict.ac.in\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 	
@@ -47,7 +47,6 @@ $email_body2 = "Dear $name,\n".
 
 $headers2 = "From: " . strip_tags($to) . "\r\n";
 $headers2 .= "Reply-To: ". strip_tags($to) . "\r\n";
-// $headers .= "CC: kushan_joshi@daiict.ac.in\r\n";
 $headers2 .= "MIME-Version: 1.0\r\n";
 $headers2 .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
