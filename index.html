@@ -45,6 +45,7 @@
         <script type="text/javascript" src="js/magnific-popup.js"></script>
         <script type="text/javascript" src="js/custom.js"></script>
 
+        <script type="text/javascript" src="js/gen_validatorv31.js"></script>
         <!--Custom Styles for demo only-->
         <link rel="stylesheet" href="custom-style.css">
         <script src="js/modernizr.custom.js"></script>
@@ -74,14 +75,14 @@
                             <li>
                               <a href="#research">
                                 <div class="icon icon-book"></div>
-                                <div class="text">Conduct Rules</div>
+                                <div class="text">Rules and Regulations</div>
                               </a>
                             </li> 
                             
                             <li>
                               <a href="#contact">
                                 <div class="icon icon-edit"></div>
-                                <div class="text">Send Message to the Dean</div>
+                                <div class="text">Send Message</div>
                               </a>
                             </li> 
 
@@ -129,7 +130,7 @@
                         <div class="headercontent">
 
                             <div class="section-container">
-                                <h2 class="title">Conduct Rules</h2>
+                                <h2 class="title">Rules and Regulations</h2>
                             </div>
                         </div>
                     </div>
@@ -140,7 +141,7 @@
                         <div class="headercontent">
                             <div class="section-container">
                                 
-                                <h2 class="title">Send Message to the Dean</h2>
+                                <h2 class="title">Send Message to the UG Convener</h2>
                             
                                 <div class="row">
                                     <div class="col-md-4">
@@ -152,46 +153,46 @@
                                         </ul>    
                                     </div>
                                 </div>
-                                <form class="af-form" id="af-form" novalidate>
+                                <form name="contactform" method="post" action="send_form_email.php" class="af-form" id="af-form" novalidate>
 
                                     <div class="af-outer af-required">
                                         <div class="af-inner">
-                                            <label for="input-name">Name</label>
-                                            <input type="text" name="fullname" id="input-name" required>
+                                            <label for="name">Name</label>
+                                            <input type="text" name="name" id="input-name" required>
                                         </div>
                                     </div>
                                     
                                     <div class="af-outer af-required">
                                         <div class="af-inner">
-                                          <label for="input-email">Email address</label>
-                                          <input type="email" name="email_address" id="input-email" required>
+                                          <label for="email">Email address</label>
+                                          <input type="email" name="email" id="input-email" required>
                                         </div>
                                     </div>
                                     
                                     <div class="af-outer af-required">
                                         <div class="af-inner">
-                                            <label for="input-id">Id</label>
-                                            <input type="text" name="Id" id="input-id" required>
+                                            <label for="id">Id</label>
+                                            <input type="text" name="id" id="input-id" required>
                                         </div>
                                     </div>
                                     
                                     <div class="af-outer af-required">
                                         <div class="af-inner">
-                                          <label for="input-batch">Batch</label>
+                                          <label for="batch">Batch</label>
                                           <input type="text" name="batch" id="input-batch" required>
                                         </div>
                                     </div>
                                     
                                     <div class="af-outer af-required">
                                         <div class="af-inner">
-                                          <label for="input-subject">Subject</label>
+                                          <label for="subject">Subject</label>
                                           <input type="text" name="subject" id="input-subject" required>
                                         </div>
                                     </div>
                                     
                                     <div class="af-outer af-required">
                                         <div class="af-inner">
-                                          <label for="input-message">Your Message</label>
+                                          <label for="message">Your Message</label>
                                           <textarea type="text" name="message" id="input-message" required></textarea>
                                         </div>
                                     </div>
@@ -759,8 +760,7 @@
         //     x++;    
         //     if (x > 4) x = 0;
         // }
-            
-            
+           
         // $("#ques").click(rotate);
         // $(document).ready(function() {
           $('.question').click(function(e) {
@@ -778,6 +778,16 @@
                 });
 
             })();
+        </script>
+        <script>
+            var frmvalidator  = new Validator("contactform");
+            frmvalidator.addValidation("name","req","Please provide your name"); 
+            frmvalidator.addValidation("email","req","Please provide your email"); 
+            frmvalidator.addValidation("email","email","Please enter a valid email address");
+            frmvalidator.addValidation("id","req","Please provide your id");
+            frmvalidator.addValidation("batch","req","Please provide your batch");
+            frmvalidator.addValidation("subject","req","Please enter a subject");
+            frmvalidator.addValidation("message","req","Please enter a message");
         </script>
     </body>
 </html>
